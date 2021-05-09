@@ -18,5 +18,18 @@ module RailsStudy
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    config.generators do |g|
+      g.skip_routes true
+      g.assets false
+      g.helper false
+      g.test_framework :rspec, fixture: true, view_specs: false, helper_specs: false, routing_specs: false, controller_specs: false
+      g.decorator false
+    end
+
+    config.time_zone = 'Tokyo'
+    config.active_record.default_timezone = :local
+
+    config.i18n.default_locale = :ja
   end
 end
