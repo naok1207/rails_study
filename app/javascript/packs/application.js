@@ -10,4 +10,16 @@ import "channels"
 Rails.start()
 ActiveStorage.start()
 
+import '../stylesheets/application'
 import './markdown.js'
+
+import hljs from 'highlight.js';
+// import javascript from 'highlight.js/lib/languages/javascript';
+// hljs.registerLanguage('javascript', javascript);
+import 'highlight.js/styles/github.css';
+// hljs.highlightAll()
+document.addEventListener('DOMContentLoaded', (event) => {
+  document.querySelectorAll('pre code').forEach((block) => {
+    hljs.highlightBlock(block);
+  });
+});
